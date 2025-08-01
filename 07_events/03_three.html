@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chaiAurJS</title>
+</head>
+<body>
+    <h1>chai aur JS</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    const element=document.querySelector("h")
+    let loopPrint;
+    const printDate=()=>{
+        console.log(Date.now());
+
+    }
+    document.querySelector("#start").addEventListener("click",()=>{
+        loopPrint=setInterval(printDate,"1000");
+        console.log("Started");
+    })
+    document.querySelector("#stop").addEventListener("click",()=>{
+        if(loopPrint){
+            clearInterval(loopPrint);
+            console.log("Stopped");
+        }
+    })
+</script>
+</html>
